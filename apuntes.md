@@ -75,4 +75,10 @@ constructor instructions.
 
 
 
+## Atributos privados.
+double _side; -> privado
+double side; -> publico.
+
+
+
 
