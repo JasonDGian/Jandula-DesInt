@@ -57,3 +57,22 @@ int functionName( int a , [ int b = 0 ]){
 community: 
 Dart pub
 https://pub.dev/packages/google_sign_in
+
+hacer ejemplo de clase con required y sin required, parametros con corchetes.
+
+
+Constructores con nombre.
+
+### Names constructors.
+In dart we can create named constructors for specific calls and behavior a t thte time of creating the object.
+Thhese constructors are create with syntax.
+
+Los constructores sobrecargados se sostituyen por los constructores con nombres.
+
+contructor.specificName.(){
+constructor instructions.
+}
+
+
+
+
