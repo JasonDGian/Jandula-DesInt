@@ -79,6 +79,22 @@ constructor instructions.
 double _side; -> privado
 double side; -> publico.
 
+## Herencia y abstractars mixins
+Una clase abstracta mixin es un tipo de clase abstracta que se usa como herencia adicional .
+Para aplicar una herencia adicional, se usan las palabras clave "extends Clase wih Clase 2"
+en este ejemplo clase2 puede ser declarada como una clase "mixin" en lugar de especificar abstract class.
+Extender directamente de una clase mixin no se puede, se hace con `with`
 
+
+## futures
+los futures agregan funcionalidad de .then y async.
+anotar diferencia entre await y .then
+La principal diferencia entre Await  y .then  es que uno se para y espera por la instruccion que indicada, y el otro "la salta" aunque también la espera, siguiendo con la secuencia de instrucciones.
+
+## Flujos, emision y escuchas.
+Si no existe un .listen los flujos de dathos no emiten.
+
+## Yield
+para los flujos de datos en lugar de la palabra Return se utiliza la palabra `yield` que es el valor que se entrega cada lapso configurado de tiempo como ciclo del flujo.
 
 
