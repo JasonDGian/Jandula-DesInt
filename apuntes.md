@@ -97,4 +97,19 @@ Si no existe un .listen los flujos de dathos no emiten.
 ## Yield
 para los flujos de datos en lugar de la palabra Return se utiliza la palabra `yield` que es el valor que se entrega cada lapso configurado de tiempo como ciclo del flujo.
 
+# Instalar flutter
+- Instalar android sdk command line tools.
+- Instalar SDK -> entrada path de /x/bin
+- where flutter -> indica donde se encuentran los binario.
+- Google usb driver.
+- 
+https://dl.google.com/android/repository/sys-img/google_apis_playstore/x86_64-35_r08.zip
 
+![image](https://github.com/user-attachments/assets/f8b23c11-f0c3-4277-a224-e23aefe5200e)
+
+[X] Android toolchain - develop for Android devices
+    X cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+
+      
