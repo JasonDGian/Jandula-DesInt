@@ -134,20 +134,60 @@ Generar nueva `Application` de flutter.
 - Seleccionamos como directorio el directorio raiz donde colgamos proyectos. 
 - A continuación elegimos el nombre del directorio raiz del proyecto.
 Ejemplo: Seleccionamos como directorio de proyectos "Mis proyectos" y nombramos el proyecto "Proy1"
-
-  A continuación pinchamos en "NO DEVICE"
+   
+  A continuación pinchamos en "NO DEVICE"   
   ![image](https://github.com/user-attachments/assets/2a4a1808-7746-4a22-9419-2f8c573a9fe3)
-
-O usamos el acceso a paleta. CTRL SHIT P -> Select device.
+   
+O usamos el acceso a paleta. CTRL SHIT P -> Select device.   
 ![image](https://github.com/user-attachments/assets/ade394af-fe92-4ee6-999b-df81c4f2c800)
-
-Ahora seleccionamos el dispositivo para redirigir la salida a ese dispositivo.
+   
+Ahora seleccionamos el dispositivo para redirigir la salida a ese dispositivo.   
 ![image](https://github.com/user-attachments/assets/2c21cd50-5d71-485c-8ffd-7196c25761e3)
 
-Una vez seleccionado el dispositivo de salida podemos ejecutar el código y observar los resultados.
-La primera vez que se ejecuta el código puede tardar un poquito.
+Una vez seleccionado el dispositivo de salida podemos ejecutar el código y observar los resultados.   
+La primera vez que se ejecuta el código puede tardar un poquito.   
 ![image](https://github.com/user-attachments/assets/9f1b8292-70b1-4bc5-a3dc-611706a5f85a)
-
-Tras unos instantes se cargará el código en el dispositivo de salida.
+   
+Tras unos instantes se cargará el código en el dispositivo de salida.    
 ![image](https://github.com/user-attachments/assets/f2c9c040-a800-4700-aa05-66edbd933b1e)
+
+Panel de estado. 
+En este panel podemos forzar el reinicio, la recarga etc...
+![image](https://github.com/user-attachments/assets/0f8f6795-3538-43cd-89af-1cef17cf0c34)
+
+
+## Directorios de flutter.
+Directorio `lib`
+En este directorio se estructura de manera ordenada los modelos,clases,objetos etc... Contiene los ficheros principales del proyecto. -> (?)
+
+Directorio `test`
+Directorio para el test.
+
+Fichero `analysis_options.yaml`
+Es el fichero de excepciones y reglas del linter de Flutter. -> Al crear un proyecto de esta manera incluye automaticamente un linter llamado "Flutter_lint : version".
+
+Directorio `.idea`
+Directorio utilizado con IntelliJ
+
+Fichero `pubspec.lock`
+
+
+Fichero `pubspeck.yaml`
+Es el fichero de dependencias y paquetes del proyecto.
+
+Directorios Android, Windows, Ios, MAcos y Web.
+Son los directorios que contienen los ficheros de construcción del proyecto. Todos se basan en la misma raiz u origen del directorio `lib`, pero cada una de ellas especifica comportamientos concretos para el sistema en cuestion. **En teoria** podemos eliminar el directorio windows sin afectar al directorio Linux, por ejemplo.
+
+
+
+## En android.
+Entrar en modo desarrollador.
+Desactivar hibernación al cargar -> "Stay awake".
+-> Buscar como.
+
+
+
+
+
+
 
