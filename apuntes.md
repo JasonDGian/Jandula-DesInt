@@ -1,4 +1,4 @@
-# :pushpin: DART
+º# :pushpin: DART
 Dart is a compiled language.
 
 
@@ -151,43 +151,47 @@ La primera vez que se ejecuta el código puede tardar un poquito.
 Tras unos instantes se cargará el código en el dispositivo de salida.    
 ![image](https://github.com/user-attachments/assets/f2c9c040-a800-4700-aa05-66edbd933b1e)
 
-Panel de estado. 
-En este panel podemos forzar el reinicio, la recarga etc...
-![image](https://github.com/user-attachments/assets/0f8f6795-3538-43cd-89af-1cef17cf0c34)
+Panel de estado.   
+En este panel podemos forzar el reinicio, la recarga etc...     
+![image](https://github.com/user-attachments/assets/0f8f6795-3538-43cd-89af-1cef17cf0c34)     
 
 
-## Directorios de flutter.
-Directorio `lib`
-En este directorio se estructura de manera ordenada los modelos,clases,objetos etc... Contiene los ficheros principales del proyecto. -> (?)
+## Directorios de flutter.       
+Directorio `lib`   
+En este directorio se estructura de manera ordenada los modelos,clases,objetos etc... Contiene los ficheros principales del proyecto. -> (?)     
 
-Directorio `test`
-Directorio para el test.
+Directorio `test`      
+Directorio para el test.     
 
-Fichero `analysis_options.yaml`
-Es el fichero de excepciones y reglas del linter de Flutter. -> Al crear un proyecto de esta manera incluye automaticamente un linter llamado "Flutter_lint : version".
+Fichero `analysis_options.yaml`     
+Es el fichero de excepciones y reglas del linter de Flutter. -> Al crear un proyecto de esta manera incluye automaticamente un linter llamado "Flutter_lint : version".      
 
-Directorio `.idea`
-Directorio utilizado con IntelliJ
+Directorio `.idea`      
+Directorio utilizado con IntelliJ      
 
-Fichero `pubspec.lock`
-
-
-Fichero `pubspeck.yaml`
-Es el fichero de dependencias y paquetes del proyecto.
-
-Directorios Android, Windows, Ios, MAcos y Web.
-Son los directorios que contienen los ficheros de construcción del proyecto. Todos se basan en la misma raiz u origen del directorio `lib`, pero cada una de ellas especifica comportamientos concretos para el sistema en cuestion. **En teoria** podemos eliminar el directorio windows sin afectar al directorio Linux, por ejemplo.
+Fichero `pubspec.lock`     
 
 
+Fichero `pubspeck.yaml`   
+Es el fichero de dependencias y paquetes del proyecto.     
+  
+Directorios Android, Windows, Ios, MAcos y Web.   
+Son los directorios que contienen los ficheros de construcción del proyecto. Todos se basan en la misma raiz u origen del directorio `lib`, pero cada una de ellas especifica comportamientos concretos para el sistema en cuestion. **En teoria** podemos eliminar el directorio windows sin afectar al directorio Linux, por ejemplo.   
 
-## En android.
-Entrar en modo desarrollador.
-Desactivar hibernación al cargar -> "Stay awake".
--> Buscar como.
-
+## En android.   
+Entrar en modo desarrollador.   
+Desactivar hibernación al cargar -> "Stay awake".  
+-> Buscar como.     
 
 
 
+## Crear skeleton file.
+Teniendo instalado Flutter Awsome Snippets podemos crear un fichero esqueleto con "mateapp"
+
+##Widgets con estado vs sin estado.
+Un widget sin estado es un widget con código que nunca cambia. Un ejemplo es un contenedor de fondo rojo.
+Un widge con estado que permite mantener un ciclo de vida. Un ejemplo es un contador de clics.
 
 
 
+  
