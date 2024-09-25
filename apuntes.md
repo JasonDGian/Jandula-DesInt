@@ -112,4 +112,23 @@ https://dl.google.com/android/repository/sys-img/google_apis_playstore/x86_64-35
       Run `path/to/sdkmanager --install "cmdline-tools;latest"`
       See https://developer.android.com/studio/command-line for more details.
 
+
+
+
+# 📌 Android studio.
+- Pantalla y resolución. -> Configuracióin de pantalla. 1440*3088 6,9"
+- Nivel de API -> Elige la versión de Android.
+- Seleccionar la gráfica - Configurar el hardware usado para emular la representación grafica.
+- Asignar la ram -> Ram que se le asigna al equipo. 
+- Asignar almacenamiento -> Almacenamiento que se le asigna al dispositivo.
+
+![image](https://github.com/user-attachments/assets/107cd511-1128-4391-8bcf-e4d5cedf3ac5)
+
+![image](https://github.com/user-attachments/assets/cf341e67-70be-4d91-a51f-b61b6bc8c1fa)
+
+![image](https://github.com/user-attachments/assets/4c9be88f-0216-4e7e-ba84-9aa4a44546e9)
+
+
+
+
       
