@@ -129,6 +129,25 @@ https://dl.google.com/android/repository/sys-img/google_apis_playstore/x86_64-35
 ![image](https://github.com/user-attachments/assets/4c9be88f-0216-4e7e-ba84-9aa4a44546e9)
 
 
+## Generar proyecto flutter.
+Generar nueva `Application` de flutter.
+- Seleccionamos como directorio el directorio raiz donde colgamos proyectos. 
+- A continuación elegimos el nombre del directorio raiz del proyecto.
+Ejemplo: Seleccionamos como directorio de proyectos "Mis proyectos" y nombramos el proyecto "Proy1"
 
+  A continuación pinchamos en "NO DEVICE"
+  ![image](https://github.com/user-attachments/assets/2a4a1808-7746-4a22-9419-2f8c573a9fe3)
 
-      
+O usamos el acceso a paleta. CTRL SHIT P -> Select device.
+![image](https://github.com/user-attachments/assets/ade394af-fe92-4ee6-999b-df81c4f2c800)
+
+Ahora seleccionamos el dispositivo para redirigir la salida a ese dispositivo.
+![image](https://github.com/user-attachments/assets/2c21cd50-5d71-485c-8ffd-7196c25761e3)
+
+Una vez seleccionado el dispositivo de salida podemos ejecutar el código y observar los resultados.
+La primera vez que se ejecuta el código puede tardar un poquito.
+![image](https://github.com/user-attachments/assets/9f1b8292-70b1-4bc5-a3dc-611706a5f85a)
+
+Tras unos instantes se cargará el código en el dispositivo de salida.
+![image](https://github.com/user-attachments/assets/f2c9c040-a800-4700-aa05-66edbd933b1e)
+
