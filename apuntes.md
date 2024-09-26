@@ -194,4 +194,18 @@ Un widge con estado que permite mantener un ciclo de vida. Un ejemplo es un cont
 
 
 
-  
+## Const en widgets.
+Se utiliza la palabra clave const para mejorar el rendimiento forzando la compilación.
+Interesa tener el const en el contenedor de más alta autoridad en la jerarquía de objetos.
+https://www.dhiwise.com/post/why-flutter-prefer-const-with-constant-constructor
+```
+When a widget marked with const is encountered during a rebuild, Flutter recognizes it as a pre-built and immutable object. This allows Flutter to potentially reuse the existing object instead of creating a new one. This reuse avoids unnecessary calculations and object allocations, leading to smoother performance.
+```
+
+## columns y rows. XM
+Ambos tienen `mainAxisAlignment`y `crossAxisAlignment`. 
+Estos metodos permiten alinear los ejes horizontales y verticales referido a los widgets que contienen.
+
+## Stateful y stateless. XM
+
+
