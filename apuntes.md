@@ -208,4 +208,5 @@ Estos metodos permiten alinear los ejes horizontales y verticales referido a los
 
 ## Stateful y stateless. XM
 
+### Metodo setState() -> Metodo usado para actualizar o "Rebuildear" el contenido alterado de un widget.
 
