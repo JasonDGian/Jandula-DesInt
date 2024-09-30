@@ -16,8 +16,9 @@ class _CounterScreenState extends State<CounterScreen> {
     //   Se utiliza la constante en tiempo de compilación por motivos de rendmiento.
     return Scaffold(
       appBar: AppBar(
-      
+
         title: const Center(child: Text("Counter Screen", style: TextStyle(fontSize: 55),)),
+        actions: [IconButton(onPressed: ()=>{}, icon: const Icon(Icons.refresh_rounded) ),], //TODO COUNTER 0
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -30,36 +31,58 @@ class _CounterScreenState extends State<CounterScreen> {
       Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-              // Boton positivo.
-              FloatingActionButton(
-            onPressed: () {
-              counter++; 
-              counter==1 ? click="Click" : click = "Clicks";
-              setState(() {
-              
-            }); },
-            child: const Icon(Icons.plus_one),
-          ),
-          // Boton de reinicio.
-          FloatingActionButton(
-            onPressed: () {
-              counter=0; 
-              counter==1 ? click="Click" : click = "Clicks";
-              setState(() {
-            }); },
-            child: const Icon(Icons.circle),
-          ),
-          // Boton de substraccion.
-          FloatingActionButton(
-            onPressed: () {
-              if (counter>0){ counter--; }
-              counter==1 ? click="Click" : click = "Clicks";
-              setState(() {
-            }); },
-            child: const Icon(Icons.minus_one),
+            // Boton de adicion.
+            CustomButton(icono: Icons.exposure_plus_1, cbFuncion: addOne,),
+            // Boton de reinicio.
+            CustomButton(icono: Icons.circle, cbFuncion: setZero),
+            // Boton de substraccion.
+            CustomButton(
+            icono: Icons.exposure_minus_1, 
+            cbFuncion: minusOne,
           ),
         ],
       )
+    );
+  }
+
+    void addOne(){
+      counter++;
+      setState(() {
+      });
+    }
+
+    void setZero(){
+      counter==0;
+      setState(() {
+      });
+    }
+
+    void minusOne(){
+      if (counter>0) { counter--;} 
+      setState(() {
+      });
+    }
+}
+
+
+
+class CustomButton extends StatelessWidget {
+
+  final IconData icono;
+  final VoidCallback? cbFuncion;
+
+  const CustomButton({
+    super.key,
+    required this.icono,
+    this.cbFuncion
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: cbFuncion,
+      enableFeedback: true,
+      child: Icon(icono),
     );
   }
 }
