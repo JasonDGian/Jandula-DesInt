@@ -26,15 +26,40 @@ class _CounterScreenState extends State<CounterScreen> {
               Expanded(child: Text( click, style: const TextStyle(fontSize: 25))),
         ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counter++; 
-          counter==1 ? click="Click" : click = "Clicks";
-          setState(() {
-          
-        }); },
-        child: const Icon(Icons.plus_one),
-      ),
+      floatingActionButton: 
+      Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+              // Boton positivo.
+              FloatingActionButton(
+            onPressed: () {
+              counter++; 
+              counter==1 ? click="Click" : click = "Clicks";
+              setState(() {
+              
+            }); },
+            child: const Icon(Icons.plus_one),
+          ),
+          // Boton de reinicio.
+          FloatingActionButton(
+            onPressed: () {
+              counter=0; 
+              counter==1 ? click="Click" : click = "Clicks";
+              setState(() {
+            }); },
+            child: const Icon(Icons.circle),
+          ),
+          // Boton de substraccion.
+          FloatingActionButton(
+            onPressed: () {
+              if (counter>0){ counter--; }
+              counter==1 ? click="Click" : click = "Clicks";
+              setState(() {
+            }); },
+            child: const Icon(Icons.minus_one),
+          ),
+        ],
+      )
     );
   }
 }
