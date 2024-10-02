@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test3/config/theme/app_theme.dart';
-import 'package:test3/presentation/chat_screen.dart';
+import 'package:test3/presentation/screens/chat/chat_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppTheme(selectedColor: 5).theme(), // New de tipo inferido.
+      theme: AppTheme(selectedColor: 1).theme(), // New de tipo inferido.
       title: 'Yes No App',
       home: const ChatScreen(),
     );
