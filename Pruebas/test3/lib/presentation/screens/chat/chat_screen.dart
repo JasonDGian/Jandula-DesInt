@@ -34,8 +34,8 @@ class _ChatView extends StatelessWidget {
         padding: const EdgeInsets.all(2),
         child: Column(
           children: [
-            Expanded(
-                child: ListView.builder(
+            Expanded( // sin este expandid la columna no puede alojar el list view builder.
+                child: ListView.builder(  // El list view builder debe de estar envuelto en un contenedor de tamaño determinado, sea este determinado de manera dinamica o de manera fija.
                     itemCount: 100,
                     itemBuilder: (context, index) {
                       return (index % 2 == 0)
