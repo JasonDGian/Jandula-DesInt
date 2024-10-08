@@ -1,6 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:test3/domain/entities/message.dart';
+import 'package:test3/presentation/providers/chat_provider.dart';
 import 'package:test3/presentation/widgets/her_message_bubble.dart';
 import 'package:test3/presentation/widgets/my_message_bubble.dart';
 import 'package:test3/presentation/widgets/shared/message_field_box.dart';
@@ -29,21 +30,32 @@ class ChatScreen extends StatelessWidget {
 class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final chatprovider = context.watch<ChatProvider>();
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(2),
         child: Column(
           children: [
-            Expanded( // sin este expandid la columna no puede alojar el list view builder.
-                child: ListView.builder(  // El list view builder debe de estar envuelto en un contenedor de tamaño determinado, sea este determinado de manera dinamica o de manera fija.
-                    itemCount: 100,
+            Expanded(
+                // sin este expandid la columna no puede alojar el list view builder.
+                child: ListView.builder(
+                    controller: chatprovider.scrollController,
+                    // El list view builder debe de estar envuelto en un contenedor de tamaño determinado, sea este determinado de manera dinamica o de manera fija.
+                    itemCount: chatprovider.messages.length, //define la longitud de la lista basado en la cantidad de mensajes en la lista de mensajes.
                     itemBuilder: (context, index) {
-                      return (index % 2 == 0)
+                      final message = chatprovider.messages[index];
+
+                      return (message.fromWho == FromWho.hers)
                           ? const HerMessageBubble()
-                          : const MyMessageBubble();
+                          : MyMessageBubble(
+                              message: message,
+                            );
                     })),
             const MessageFieldBox(),
-            const SizedBox(height: 5,)
+            const SizedBox(
+              height: 5,
+            )
           ],
         ),
       ),

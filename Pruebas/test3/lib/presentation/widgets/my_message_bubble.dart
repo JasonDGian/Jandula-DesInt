@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:test3/domain/entities/message.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+  const MyMessageBubble( 
+    { 
+    required this.message, super.key
+    }
+ );
+
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
 
     final colors = Theme.of(context).colorScheme;
+   
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container( 
-          height: 45,
-          width: 200,
+          //height: 100,
+          //width: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), 
             color: colors.primary,
           ),
-          child: const Padding(
-            padding:  EdgeInsets.all(15.0),
+          child: Padding(
+            padding:  const EdgeInsets.all(15.0),
             child:  Text(
-                "esto es un placeholder", 
-                style: TextStyle(color: Colors.white),
+                message.text, 
+                style: const TextStyle(color: Colors.white),
               ),
             ),
          ),

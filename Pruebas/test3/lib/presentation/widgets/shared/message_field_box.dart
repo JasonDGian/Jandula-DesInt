@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+//import 'package:test3/main.dart';
+import 'package:test3/presentation/providers/chat_provider.dart';
 
 class MessageFieldBox extends StatelessWidget {
   const MessageFieldBox({super.key});
@@ -6,7 +9,7 @@ class MessageFieldBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-
+    final chatprovider = context.watch<ChatProvider>();
     final textController = TextEditingController();
 
     final underlineInputBorder = UnderlineInputBorder(
@@ -17,10 +20,11 @@ class MessageFieldBox extends StatelessWidget {
       enabledBorder: underlineInputBorder,
       focusedBorder: underlineInputBorder,
       filled: true,
-      hintText: "Teclea",
+      hintText: "Teclea una pregunta.",
       suffixIcon: IconButton(
           onPressed: () {
             final textvalue = textController.text;
+            chatprovider.sendMessage(textvalue);
             print("Send message $textvalue");
             textController.clear();
           },
@@ -38,6 +42,7 @@ class MessageFieldBox extends StatelessWidget {
         print("Message submit $value");
         textController.clear();
         focusNode.requestFocus();
+        chatprovider.sendMessage(value);
       },
       onChanged: (value) {
         print('Changed value $value');

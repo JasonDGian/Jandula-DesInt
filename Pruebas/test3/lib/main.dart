@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) { ChartProvider(); } )], // el guión representa el contexto pero indica que no lo usa.
+      providers: [ChangeNotifierProvider(create: (_) => ChatProvider())], // el guión representa el contexto pero indica que no lo usa.
       child: MaterialApp(
         theme: AppTheme(selectedColor: 1).theme(), // New de tipo inferido.
         title: 'Yes No App',
