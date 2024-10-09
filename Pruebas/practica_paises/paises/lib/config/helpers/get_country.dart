@@ -20,6 +20,7 @@ class GetCountry {
       // Empleando el metodo "From Json" del modelo CountryModel
       // rellenamos las propiedades del nuevo objeto CountryModel.
       final countryModel = CountryModel.fromJson(response.data[0]);
+      print("NOMBRE DEL PAIS CAPTURADO  $countryModel");
 
       // Construye una entidad con los datos sacados que nos importan.
       return CountryEntity(
