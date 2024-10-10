@@ -1,6 +1,4 @@
-// To parse this JSON data, do
-//
-//     final countryModel = countryModelFromJson(jsonString);
+// Modelo generado en Quicktype.io modificado.
 
 import 'dart:convert';
 
