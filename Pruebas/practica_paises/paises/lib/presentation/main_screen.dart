@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 148, 234, 240),
+        backgroundColor: const Color.fromARGB(255, 255, 228, 108),
         leading: const Icon(Icons.flag),
         title: const Text("Paises y banderas!"),
         actions: const [
@@ -34,8 +34,8 @@ class _CountryBox extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     const Color colCol = Colors.amber;
 
-    final negrita = TextStyle(fontWeight: FontWeight.w700);
-    final grande = TextStyle(fontSize: 40);
+    const negrita = TextStyle(fontWeight: FontWeight.w700);
+    const grande = TextStyle(fontSize: 40);
 
     // Observa los cambios que ocurren en el Country Provider.
     var countryProvider = context.watch<CountryProvider>();
@@ -61,15 +61,15 @@ class _CountryBox extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           // Texto "NOMBRE" en panel izquierdo.
-                          Text("Nombre:", style: negrita),
+                          const Text("Nombre:", style: negrita),
                           // Nombre del pais devuelto por provider.
-                          Text(countryProvider.nombre, style: grande),
+                          Text(countryProvider.nombreP, style: grande),
                           // Caja de separación entre textos.
                           const SizedBox(height: 20),
                           // Texto "CAPITAL" en el panel izquiero.
-                          Text("Capital:", style: negrita),
+                          const Text("Capital:", style: negrita),
                           // Capital del pais devuelta por provider.
-                          Text(countryProvider.capital, style: grande)
+                          Text(countryProvider.capitalP, style: grande)
                         ],
                       ),
                     ),
@@ -83,8 +83,8 @@ class _CountryBox extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.network(
-                              countryProvider.bandera) // Aqui iria la bandera.,
+                          Image.network(countryProvider
+                              .banderaP) // Aqui iria la bandera.,
                         ],
                       ),
                     )

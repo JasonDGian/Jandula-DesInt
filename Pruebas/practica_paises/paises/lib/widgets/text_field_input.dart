@@ -19,11 +19,12 @@ class TextFieldInput extends StatelessWidget {
 
     // Decoracion para el formulario de texto.
     final underlineInputBorder = UnderlineInputBorder(
-        borderSide: const BorderSide(color: Colors.green),
+        borderSide: const BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
         borderRadius: BorderRadius.circular(25));
 
     // Decoracion para el formulario de texto.
     final inputDecorationX = InputDecoration(
+      fillColor: const Color.fromARGB(255, 255, 239, 167),
       enabledBorder: underlineInputBorder,
       focusedBorder: underlineInputBorder,
       filled: true,
