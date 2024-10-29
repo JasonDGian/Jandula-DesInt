@@ -1,4 +1,12 @@
 # Login firebase flutter.
+1. Creamos un proyecto firebase en Firebase.
+2. Configuramos los proveedores deseados.
+   (De no haberlo hecho ya - Instalar flutterfire_cli con `curl -sL https://firebase.tools | bash`)
+   (Autenticarse en Firebase con `firebase login`)
+4. Configuramos flutterfire en el proyecto flutter.   
+
+
+
 Para usar firebase en flutter debemos antes crear un proyectyo firebase con el que enganchar nuestra aplicaion.
 Una vez creado el proyecto debemos crear el enlace.  -> Para ello instalamos firebase CLI
 tras eso hacemos login en las herramientas de firebase con nuestra cuenta de google. 
@@ -100,3 +108,41 @@ Este comando descarga e instala la herramienta de línea de comandos de FlutterF
 
 # SI HA DADO ERROR: Reiniciamos la consola tras insertar la variable de entorno y repetimos el comando de instalación.
 ![imagen](https://github.com/user-attachments/assets/13ff24ad-f29c-4cf8-8371-d0aea747d7fc)
+
+
+---
+
+# Configuración de proyecto.
+Con la terminal ubicada en la raiz del proyecto a configurar, ejecutamos el siguiente comando:   
+```bash
+flatterfire configure
+```
+![imagen](https://github.com/user-attachments/assets/098298c4-419c-4316-9f99-a17eed9191b7)
+
+# Seleccionamos con que proyecto de firebase deseamos enlazar. 
+![imagen](https://github.com/user-attachments/assets/d1e320d6-9f67-4091-94f6-0cc71ba495fa)
+
+# Seleccionamos las plataformas que deseamos soportar.
+Seleccionamos / deseleccionamos con `barra espaciadora`
+![imagen](https://github.com/user-attachments/assets/7af6f29b-4bc9-4563-81f4-a58aac775f95)
+
+# Configuramos el nombre o identificador para esta configuracion.
+![imagen](https://github.com/user-attachments/assets/4d28e528-8b21-48a9-97c4-d828d5e62fe2)
+
+![imagen](https://github.com/user-attachments/assets/681f40e2-05d5-4704-877e-4376085db980)
+
+
+# Posible error que podemos encontrar.
+![imagen](https://github.com/user-attachments/assets/7fc67331-f299-46e3-a914-6cc52cb3b7df)
+
+Este error puede darse cuando el token de sesión del login de firebase expira. Para ello podemos re-autenticarnos con `firebase logout` y `firebase login` o con `firebase login --reauth`.
+Si haciendo esto no se arregla el problema puede ser debido al nombre asignado al proyecto. El nombre del proyecto debe de respetar ciertas convenciones. 
+
+# Generación correcta de proyecto.
+![imagen](https://github.com/user-attachments/assets/7d840cf9-ff0f-4719-bf6f-f053a0d17222)
+
+
+
+
+
+
