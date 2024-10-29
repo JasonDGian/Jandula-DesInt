@@ -1,8 +1,8 @@
 # Login firebase flutter.
-1. Creamos un proyecto firebase en Firebase.
-2. Configuramos los proveedores deseados.
-   (De no haberlo hecho ya - Instalar flutterfire_cli con `curl -sL https://firebase.tools | bash`)
-   (Autenticarse en Firebase con `firebase login`)
+1. Creamos un proyecto firebase en Firebase.   
+2. Configuramos los proveedores deseados.   
+   (De no haberlo hecho ya - Instalar flutterfire_cli con `curl -sL https://firebase.tools | bash`)   
+   (Autenticarse en Firebase con `firebase login`)   
 4. Configuramos flutterfire en el proyecto flutter.   
 
 
