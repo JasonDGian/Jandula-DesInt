@@ -59,8 +59,32 @@ console.firebase.google.com
 
 # Configuramos el nombre visible del proyecto (1) y el correo de asistencia del proyecto (2).
 ![imagen](https://github.com/user-attachments/assets/2f81bf77-35e9-42db-9d4d-c6ba59aa9428)
+   
+---   
+   
+# Instalar Instalar Firebase CLI
+Para instalar firebase tools utilizamos el siguiente comando.
+```bash
+curl -sL https://firebase.tools | bash
+```
+![imagen](https://github.com/user-attachments/assets/40188776-4104-4868-9ad7-130e48c0a8da)
 
+ # Iniciamos sesión en Firebase Auth.
+ Para ello usamos la cuenta de google con la que hemos creado el proyecto.   
+ Introducimos en consola el comando:
+ ```bash
+firebase login
+```
 
+![imagen](https://github.com/user-attachments/assets/2912a579-9619-4f31-b588-ed0e85771713)
 
+# Visitamos el enlace generado por consola para la autenticación mediante navegador.
+![imagen](https://github.com/user-attachments/assets/68ce8f4d-98a5-4ea1-8952-fd69a592c62b)
+# Seleccionamos la cuenta con la que hemos creado el proyecto.
+![imagen](https://github.com/user-attachments/assets/942d1ff2-dbf7-414e-bf23-2c4e9bee5837)
 
+# Concedemos los permisos necesarios hasta dar con la notificación de exito.
+![imagen](https://github.com/user-attachments/assets/0226811f-ae55-4f00-be22-580ee9c6372a)
+# Controlamos en consola para confirmar.
+![imagen](https://github.com/user-attachments/assets/131a6ef3-00e4-4fdd-a561-11480a03ff75)
 
