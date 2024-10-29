@@ -27,4 +27,9 @@ console.firebase.google.com
 15. tras activar la consola de flutterfire_cli añadir la variable de entorno en el path o no funcionara.a.
 16. dentro del proyecto de flutter ejecutamos `flutterfire configure` -> negamos el uso de configuraciones ya existentes.
 17. sobreescribimos el fichero json existente con los cambios de la nueva configuracion.
-18. 
+18. configuramos para que plataformas queremos configurar el proyecto.
+19. `firebase_options.dart` -> contiene las opciones de configuracion  de firebase para ese proecto para las plataformas seleccionadas durante el proceso de configuracion.
+20. flutter pub add firebase_core
+21. flutter pub add firebase_auth
+22. introducir en el main el sistema de deteccion de plataforma en el que es ejecutado.
+23. 
