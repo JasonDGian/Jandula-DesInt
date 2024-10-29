@@ -22,7 +22,7 @@ console.firebase.google.com
 10. Instalamos firebase CLI -> Necesaria para configuraciones de firebase en nuestro proyecto.
 11. nodejs puede ayudar a instalar las herramientas de firebase en windows.
 12. a continuacion `firebase login` en consola -> Usuario contraseña de google con el que hemos creado el proyecto..
-13. para comprobar que la CLI funciona correctamente hacemos `firebase:list`
+13. para comprobar que la CLI funciona correctamente hacemos `firebase projects:list`
 14. `dart pub global activate flutterfire_cli` -> activa la posibilidad de usar los comandos flitterfire.
 15. tras activar la consola de flutterfire_cli añadir la variable de entorno en el path o no funcionara.a.
 16. dentro del proyecto de flutter ejecutamos `flutterfire configure` -> negamos el uso de configuraciones ya existentes.
@@ -87,4 +87,16 @@ firebase login
 ![imagen](https://github.com/user-attachments/assets/0226811f-ae55-4f00-be22-580ee9c6372a)
 # Controlamos en consola para confirmar.
 ![imagen](https://github.com/user-attachments/assets/131a6ef3-00e4-4fdd-a561-11480a03ff75)
+# Para comprobar el correcto funcionamiento listamos los proyectos flutter.
+![imagen](https://github.com/user-attachments/assets/628ec750-94c7-4c3b-acf9-c36ec884e277)
+# Instalamos flutterfire CLI.
+Este comando descarga e instala la herramienta de línea de comandos de FlutterFire, llamada flutterfire_cli, a nivel global en tu sistema. Esto significa que el comando flutterfire estará disponible para que lo uses en cualquier proyecto o directorio sin necesidad de configuraciones adicionales.
+![imagen](https://github.com/user-attachments/assets/f5030cb3-f8a2-4e88-b0ac-633e7757585a)
 
+>[!CAUTION]
+> Es posible que aparezca un mensaje de error parecido a este, que nos informa que la variable de entorno no está correctamente configurada. De ser asi deberemos configurarla antes de continuar y repetir la operacion.
+>   
+>![imagen](https://github.com/user-attachments/assets/aa3e762d-c92b-4329-8447-43db0be91cf2)
+
+# SI HA DADO ERROR: Reiniciamos la consola tras insertar la variable de entorno y repetimos el comando de instalación.
+![imagen](https://github.com/user-attachments/assets/13ff24ad-f29c-4cf8-8371-d0aea747d7fc)
