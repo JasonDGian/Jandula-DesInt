@@ -150,3 +150,49 @@ Error que obtenemos en este caso.
 PAra el ide del proyecto debemos ir a firebase, pinchar en descripcion general y seleccionar Configuracion.
 ![image](https://github.com/user-attachments/assets/f85ecaf8-8f28-40ea-90c1-32ed4d480c8a)
 
+
+Debemos configurar el  fichero .firebaserc
+![image](https://github.com/user-attachments/assets/957811b4-3c38-4a5a-b0ab-e5637ab81a79)
+
+#Operacion de configuracion terminada.
+Aqui tenemos el firebase app id para cada plataforma.
+
+### PAra que se usan estas ID ?
+Estas claves se pueden exponer al publico sin temores por la seguridad de la aplicacion.
+
+Este proceso de configuracion nos debe haber creado un fichero llamado `firebase_options.dart`.
+Este fichero controla la plataforma en la que se ejecuta la aplicacion y retorna su configuracion por defecto en base a la plataforma donde se ejecuta. 
+
+# el Configure NO añadirá automaticamente las dependencias al pubspec.yaml
+Por este motivo debemos de añadir las dependencias necesarias en el fichero de dependencias del proyecto.
+```yaml
+  firebase_auth: ^5.2.0
+  firebase_core: ^3.4.0
+  firebase_ui_auth: ^1.15.0
+  firebase_ui_oauth_google: ^1.3.3
+  google_sign_in: ^6.2.1
+```
+![image](https://github.com/user-attachments/assets/759e44d1-117a-4004-b4b0-6b5aa1e88906)
+
+
+# Actualizar el main.
+Es necesario meter en el main un trozo de codigo que segun la plataforma en la que se ejecute la aplicacion se carguen las configuraciones correctas (desde el fichero de configuracion)
+![image](https://github.com/user-attachments/assets/08921f0d-4531-488d-910f-af5ac6452d7e)
+
+
+
+![image](https://github.com/user-attachments/assets/2ca1f164-e7fe-48e4-adc4-50b089e72676)
+
+
+Nota: 
+el streambuilder de autenticacion devuelve un usuario, este usuario NO VA DEFINIDO EN NUESTRO PROYECTO, es una dependencia de Firebase. Nosotros solo recibimos un objeto usuario de google QUE CONTIENE LOS DATOS DEL USUARIO, pero no devuelve una string con el UUID directamente.
+
+Nota: 
+En el kit de firebase vienen ciertas utilidades como el SignInScreen que podemos usar como chuleta para crear nuestro proprio screen de login.
+
+
+
+
+#TODO : documentar.
+En terminal de ide en directorio `flutter create --platforms=windows`
+
