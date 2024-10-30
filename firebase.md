@@ -142,7 +142,10 @@ Si haciendo esto no se arregla el problema puede ser debido al nombre asignado a
 ![imagen](https://github.com/user-attachments/assets/7d840cf9-ff0f-4719-bf6f-f053a0d17222)
 
 
-
+# Controlar el nombre del proyecto. 
+si el proyecto ya ha sido configurado en pasado con firebase es posible que debamos actualizar el ID del proyecto.
+Error que obtenemos en este caso.
+![image](https://github.com/user-attachments/assets/6216bd8a-7d03-45ec-9251-86a3b2bab32c)
 
 
 
