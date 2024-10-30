@@ -1,3 +1,83 @@
+# 🗒️ Resumen proceso:
+1. **Crear proyecto Flutter.**  
+2. **Crear proyecto Firebase.**   
+   a. Configurar proveedores de login.
+3. **Enlazar proyectos mediante comando `flutterfire configure`.**
+4. **Añadir dependencias a proyecto flutter** (pubspec.yaml).
+   ```yaml
+     firebase_auth: ^5.2.0
+     firebase_core: ^3.4.0
+     firebase_ui_auth: ^1.15.0
+     firebase_ui_oauth_google: ^1.3.3
+     google_sign_in: ^6.2.1
+   ```
+5. **Configurar clase `Main` para que use configuraciones según plataforma (recuperadas de fichero `firebase_options.dart`)**
+   ```dart
+      void main() async {
+       WidgetsFlutterBinding.ensureInitialized();
+       await Firebase.initializeApp(
+         options: DefaultFirebaseOptions.currentPlatform,
+       );
+      
+      
+       runApp(const MyApp());
+      }
+   ```
+   
+6. **Configurar la clase MyApp para que realize las operaciones de inicialización necesarias**.   
+Estas operaciones pueden ser por ejemplo iniciar un provider, pasar un router etc... Tras eso llamar a AuthGate.
+ ```dart
+   import 'package:flutter/material.dart';
+   import 'auth_gate.dart';
+   
+   class MyApp extends StatelessWidget {
+    const MyApp({super.key});
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const AuthGate(),
+      );
+    }
+   }
+```
+
+7. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**
+Esta clase es la que contiene realmente la pantalla de inicio.
+ ```dart
+import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:flutter/material.dart';
+
+import 'home.dart';
+
+class AuthGate extends StatelessWidget {
+  const AuthGate({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return SignInScreen(
+            providers: [],
+          );
+        }
+
+        return const HomeScreen();
+      },
+    );
+  }
+}
+
+```
+
+
+---
+
 # Login firebase flutter.
 1. Creamos un proyecto firebase en Firebase.   
 2. Configuramos los proveedores deseados.   
