@@ -74,6 +74,8 @@ Esta clase es la que contiene realmente la pantalla de inicio.
             return SignInScreen(
               providers: [
                 EmailAuthProvider(),
+                GoogleProvider(
+                  clientId: "TU ID CLIENTE DE PROYECTO FIREBASE")
               ],
               headerBuilder: (context, constraints, shrinkOffset) {
                 return Padding(
