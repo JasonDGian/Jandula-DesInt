@@ -191,6 +191,10 @@ Nota:
 En el kit de firebase vienen ciertas utilidades como el SignInScreen que podemos usar como chuleta para crear nuestro proprio screen de login.
 
 
+Nota: 
+Es necesario copiar el id de cliente web para incluirlo en la aplicacion web y que esta pueda configurarla en el GoogleProvider como parametro y que este sincronice o que se identifique.
+![image](https://github.com/user-attachments/assets/89f2b783-7847-4203-ab9a-4ef97c8d5258)
+
 
 
 #TODO : documentar.
