@@ -3,7 +3,16 @@
 2. **Crear proyecto Firebase.**   
    a. Configurar proveedores de login.
 3. **Enlazar proyectos mediante comando `flutterfire configure`.**
-4. **Añadir dependencias a proyecto flutter** (pubspec.yaml).
+4. **Crear fichero .firebaserc con ID de proyecto firebase**.
+   ```json
+   {
+       "projects":{
+           "default":"proyecto-login-djg"
+       }
+   }
+   ```
+   
+5. **Añadir dependencias a proyecto flutter** (pubspec.yaml).
    ```yaml
      firebase_auth: ^5.2.0
      firebase_core: ^3.4.0
@@ -11,7 +20,7 @@
      firebase_ui_oauth_google: ^1.3.3
      google_sign_in: ^6.2.1
    ```
-5. **Configurar clase `Main` para que use configuraciones según plataforma (recuperadas de fichero `firebase_options.dart`)**
+6. **Configurar clase `Main` para que use configuraciones según plataforma (recuperadas de fichero `firebase_options.dart`)**
    ```dart
       void main() async {
        WidgetsFlutterBinding.ensureInitialized();
@@ -24,93 +33,93 @@
       }
    ```
    
-6. **Configurar la clase MyApp para que realize las operaciones de inicialización necesarias**.   
+7. **Configurar la clase MyApp para que realize las operaciones de inicialización necesarias**.   
 Estas operaciones pueden ser por ejemplo iniciar un provider, pasar un router etc... Tras eso llamar a AuthGate.
- ```dart
-   import 'package:flutter/material.dart';
-   import 'auth_gate.dart';
-   
-   class MyApp extends StatelessWidget {
-    const MyApp({super.key});
-    @override
-    Widget build(BuildContext context) {
-      return MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const AuthGate(),
-      );
-    }
-   }
-```
+    ```dart
+      import 'package:flutter/material.dart';
+      import 'auth_gate.dart';
+      
+      class MyApp extends StatelessWidget {
+       const MyApp({super.key});
+       @override
+       Widget build(BuildContext context) {
+         return MaterialApp(
+           theme: ThemeData(
+             primarySwatch: Colors.blue,
+           ),
+           home: const AuthGate(),
+         );
+       }
+      }
+   ```
 
 7. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**   
 Esta clase es la que contiene realmente la pantalla de inicio.
- ```dart
-import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
-import 'package:flutter/material.dart';
-
-import 'home.dart';
-
-class AuthGate extends StatelessWidget {
- const AuthGate({super.key});
-
- @override
- Widget build(BuildContext context) {
-   return StreamBuilder<User?>(
-     stream: FirebaseAuth.instance.authStateChanges(),
-     builder: (context, snapshot) {
-       if (!snapshot.hasData) {
-         return SignInScreen(
-           providers: [
-             EmailAuthProvider(),
-           ],
-           headerBuilder: (context, constraints, shrinkOffset) {
-             return Padding(
-               padding: const EdgeInsets.all(20),
-               child: AspectRatio(
-                 aspectRatio: 1,
-                 child: Image.asset('flutterfire_300x.png'),
-               ),
-             );
-           },
-           subtitleBuilder: (context, action) {
-             return Padding(
-               padding: const EdgeInsets.symmetric(vertical: 8.0),
-               child: action == AuthAction.signIn
-                   ? const Text('Welcome to FlutterFire, please sign in!')
-                   : const Text('Welcome to Flutterfire, please sign up!'),
-             );
-           },
-           footerBuilder: (context, action) {
-             return const Padding(
-               padding: EdgeInsets.only(top: 16),
-               child: Text(
-                 'By signing in, you agree to our terms and conditions.',
-                 style: TextStyle(color: Colors.grey),
-               ),
-             );
-           },
-           sideBuilder: (context, shrinkOffset) {
-             return Padding(
-               padding: const EdgeInsets.all(20),
-               child: AspectRatio(
-                 aspectRatio: 1,
-                 child: Image.asset('flutterfire_300x.png'),
-               ),
-             );
-           },
-         );
-       }
-       return const HomeScreen();
-     },
-   );
- }
-}
-
-
-```
+    ```dart
+   import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
+   import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+   import 'package:flutter/material.dart';
+   
+   import 'home.dart';
+   
+   class AuthGate extends StatelessWidget {
+    const AuthGate({super.key});
+   
+    @override
+    Widget build(BuildContext context) {
+      return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return SignInScreen(
+              providers: [
+                EmailAuthProvider(),
+              ],
+              headerBuilder: (context, constraints, shrinkOffset) {
+                return Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Image.asset('flutterfire_300x.png'),
+                  ),
+                );
+              },
+              subtitleBuilder: (context, action) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: action == AuthAction.signIn
+                      ? const Text('Welcome to FlutterFire, please sign in!')
+                      : const Text('Welcome to Flutterfire, please sign up!'),
+                );
+              },
+              footerBuilder: (context, action) {
+                return const Padding(
+                  padding: EdgeInsets.only(top: 16),
+                  child: Text(
+                    'By signing in, you agree to our terms and conditions.',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                );
+              },
+              sideBuilder: (context, shrinkOffset) {
+                return Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Image.asset('flutterfire_300x.png'),
+                  ),
+                );
+              },
+            );
+          }
+          return const HomeScreen();
+        },
+      );
+    }
+   }
+   
+   
+   ```
 
 
 ---
