@@ -44,7 +44,7 @@ Estas operaciones pueden ser por ejemplo iniciar un provider, pasar un router et
    }
 ```
 
-7. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**
+7. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**   
 Esta clase es la que contiene realmente la pantalla de inicio.
  ```dart
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
