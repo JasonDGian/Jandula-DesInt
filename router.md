@@ -37,6 +37,27 @@ final GoRouter myRouter = GoRouter(
     ]);
 ```
 
+# 📌 Configuracion en Main.
+El ejemplo incluye Multiprovider pero no es necesario para su funcionamiento.
+```dart
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      theme: AppTheme(selectedColor: 0).theme(),
+      debugShowCheckedModeBanner: false,
+      title: 'Aplicación flutter',
+      routerConfig: myRouter,
+    );
+  }
+}
+```
+
+
 # 📌 Navegación.
 La navegación en GoRouter funciona como una pila de ubicaciones que se amontonan en un historial.   
 
