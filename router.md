@@ -38,7 +38,10 @@ final GoRouter myRouter = GoRouter(
 ```
 
 # 📌 Configuracion en Main.
-El ejemplo incluye Multiprovider pero no es necesario para su funcionamiento.
+Para utilizar la navegación del GoRouter modificaremos la clase main de este modo:
+1. Incluir el sufijo `.router`
+2. Definir el `routerConfig: nombreRouter` en lugar del body o child.
+
 ```dart
 void main() => runApp(const MyApp());
 
