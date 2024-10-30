@@ -147,5 +147,6 @@ si el proyecto ya ha sido configurado en pasado con firebase es posible que deba
 Error que obtenemos en este caso.
 ![image](https://github.com/user-attachments/assets/6216bd8a-7d03-45ec-9251-86a3b2bab32c)
 
-
+PAra el ide del proyecto debemos ir a firebase, pinchar en descripcion general y seleccionar Configuracion.
+![image](https://github.com/user-attachments/assets/f85ecaf8-8f28-40ea-90c1-32ed4d480c8a)
 
