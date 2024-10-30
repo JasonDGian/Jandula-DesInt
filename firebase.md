@@ -53,7 +53,7 @@ Estas operaciones pueden ser por ejemplo iniciar un provider, pasar un router et
       }
    ```
 
-7. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**   
+8. **Crear y configurar clase de autenticación. Ejemplo : clase `AuthGate()`**   
 Esta clase es la que contiene realmente la pantalla de inicio.
     ```dart
    import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
@@ -125,6 +125,75 @@ Esta clase es la que contiene realmente la pantalla de inicio.
      }
    }
    ```
+
+9. **Añade una pantalla de perfil**   
+   Esto añadirá una pantalla home con una sección de perfil de usuario.
+   ```dart
+   import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+   import 'package:flutter/material.dart';
+   
+   class HomeScreen extends StatelessWidget {
+     const HomeScreen({super.key});
+   
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         appBar: AppBar(
+           actions: [
+             IconButton(
+               icon: const Icon(Icons.person),
+               onPressed: () {
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute<ProfileScreen>(
+                     builder: (context) => ProfileScreen(
+                       appBar: AppBar(
+                         title: const Text('User Profile'),
+                       ),
+                       actions: [
+                         SignedOutAction((context) {
+                           Navigator.of(context).pop();
+                         })
+                       ],
+                       children: [
+                         const Divider(),
+                         Padding(
+                           padding: const EdgeInsets.all(2),
+                           child: AspectRatio(
+                             aspectRatio: 1,
+                             child: Image.asset('flutterfire_300x.png'),
+                           ),
+                         ),
+                       ],
+                     ),
+                   ),
+                 );
+               },
+             )
+           ],
+           automaticallyImplyLeading: false,
+         ),
+         body: Center(
+           child: Column(
+             children: [
+               Image.asset('dash.png'),
+               Text(
+                 'Welcome!',
+                 style: Theme.of(context).textTheme.displaySmall,
+               ),
+               const SignOutButton(),
+             ],
+           ),
+         ),
+       );
+     }
+   }
+   ```
+
+10. 
+
+
+
 
 
 ---
