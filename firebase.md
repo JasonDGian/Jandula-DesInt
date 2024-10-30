@@ -200,3 +200,7 @@ Es necesario copiar el id de cliente web para incluirlo en la aplicacion web y q
 #TODO : documentar.
 En terminal de ide en directorio `flutter create --platforms=windows`
 
+
+Multiprovider principio aplicacion -> retorna lista -> control current user instance por presencia en lista -> de estar devolver homescreen, de lo contrario error / pop
+
+
