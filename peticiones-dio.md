@@ -20,34 +20,63 @@ import 'package:dio/dio.dart';
 // Importamos el paquete dio.
 import 'package:dio/dio.dart';
 
-// Creamos la clase.
-class GetValidationDetails {
-  // Instanciamos el objeto Dio().
-  final _dio = Dio();
+class Pedidor {
 
-  /* ------  Definimos los metodos de uso del Dio ------ */
+  final Dio _dio = Dio( 
+    BaseOptions (
+      // URL base de las peticiones, ubicacion raiz.
+      baseUrl: "https://pablo.esta.fuerte.com",
 
-  // Petición GET
-  Future getData() async {
-  final response = await _dio.get( /* peticion a la api de turno.*/ )
+      // Si la conexión no se puede establecer dentro de este tiempo, se lanzará una excepción.
+      connectTimeout: const Duration(seconds: 5),
 
-  // Procesamos o formateamos la respuesta segun necesidad. 
-
-  // Devolvemos la respuesta.
-  return response.data;
-  }
+      // Se utiliza para establecer el tiempo máximo que dio esperará para 
+      // recibir una respuesta después de que se haya establecido una conexión.
+      receiveTimeout: const Duration(milliseconds: 3000)    
+    )
+   );
+}
 ```
 
 # 📌 Como realizar peticiones.
-En dio podemos realizar las distintas peticiones HTTP.
-
+En dio podemos realizar las distintas peticiones HTTP.   
+**Ejemplo:**   
 ## 🟢 GET
+```dart
+import 'package:dio/dio.dart';
 
+Future<void> fetchUserData() async {
+  Dio dio = Dio();
+  try {
+    Response response = await dio.get('https://jsonplaceholder.typicode.com/users/1');
+    print(response.data.toString());
+  } catch (e) {
+    print(e.toString());
+  }
+}
+```
 
 ## 🟠 POST
-
+```dart
+Future<void> createUser() async {
+  Dio dio = Dio();
+  try {
+    Response response = await dio.post(
+      'https://jsonplaceholder.typicode.com/users',
+      data: {
+        'name': 'John Doe',
+        'email': 'johndoe@example.com',
+      },
+    );
+    print(response.data);
+  } catch (e) {
+    print(e.toString());
+  }
+}
+```
 ## 🔵 PUT
- 
+```dart
+``` 
 ## 🔴 DELETE
 
 # 📌 Manejar códigos de respuesta HTTP.
