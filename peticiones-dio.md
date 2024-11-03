@@ -35,6 +35,9 @@ class Pedidor {
       receiveTimeout: const Duration(milliseconds: 3000)    
     )
    );
+
+  //Definición de metodos y llamadas de clase dio Pedidor.
+
 }
 ```
 
