@@ -36,3 +36,21 @@ DropdownButton<String>(
 >[!IMPORTANT]
 >Los `DropdownButton` son de tipo generico, es decir, se debe de concretar el tipo de valor que manejarán , esto se hace en la declaración DropdownButton<TIPO>().
 >
+
+# 📌 ListView.builder
+Este widget, variacion de ListView, se compone de un itemCount  que define cuantos objetos se van a generar, y una funcion que retorna dichos objetos.
+Lo tipico es disponer de una coleccion de objetos o valores con los que generar los objetos retornados en la lambda.
+
+**Ejemplo de builder**
+```dart
+const itemCount = 10;
+
+var listado = ListView.builder(
+  itemCount: itemCount,
+  itemBuilder: (context, index) {
+    return Text(index.toString());
+  },
+);
+```
+
+
