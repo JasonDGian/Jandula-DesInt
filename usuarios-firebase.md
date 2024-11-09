@@ -11,7 +11,11 @@ final proveedor = context.watch<UserDetailProvider>();
 2. Aprovechando el streambuilder que firebase ya genera, usamos su snapshot para acceder al usuario que devuelve.
 ![imagen](https://github.com/user-attachments/assets/a1e2a294-e4f8-4cb9-8c62-0856eb8178b1)
 
-**Asignamos el correo y el nombre de usuario a una variable**
+**Operamos con los datos del snapshot.**   
+Podemos asignarlos a variables para operar en la misma clase.   
+- ejemplo: logica `if user null`.
+- ejemplo: almacenar en provider.
+    
 ```dart
 String? correo = snapshot.data?.email;
 String? username = snapshot.data?.displayName;
