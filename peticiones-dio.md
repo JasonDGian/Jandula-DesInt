@@ -137,3 +137,16 @@ if ( response.statusCode == 404 ){
   </tbody>
 </table>
 </div>
+
+# 📌 Enviar objetos en una petición como Json.
+Cuando tenemos creado un modelo que refleja exactamente lo que la API se espera como cuerpo json de la petición podremos decodificarlo en Json y enviarlo por una petición.
+```dart
+// Funcion en el DIO que envia un objeto incidencia decodificado en Json.
+Future<int?> crearIncidencia(IncidenciaDto incidencia) async {
+    final response = await dio.put('http://localhost:8888/incidencias',
+        data: jsonEncode(incidencia));
+
+    // devuelve la respuesta obtenida por la api.
+    return response.statusCode;
+  }
+```
