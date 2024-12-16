@@ -31,6 +31,7 @@ class FutureExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('FutureBuilder Example')),
       body: Center(
+        // El hijo del scaffold es el Future Builder (que hara lo que debe de hacer y luego retornará el resultado como hijo del scaffold).
         child: FutureBuilder<String>(
           future: _fetchData(), // Future que estamos observando.
           builder: (context, snapshot) {
