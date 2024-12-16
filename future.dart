@@ -1,86 +1,55 @@
 import 'package:flutter/material.dart';
 
-/// Flutter code sample for [FutureBuilder].
+void main() => runApp(const MyApp());
 
-void main() => runApp(const FutureBuilderExampleApp());
-
-class FutureBuilderExampleApp extends StatelessWidget {
-  const FutureBuilderExampleApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Configura la aplicación principal con una pantalla inicial.
     return const MaterialApp(
-      home: FutureBuilderExample(),
+      home: FutureExampleScreen(),
     );
   }
 }
 
-class FutureBuilderExample extends StatefulWidget {
-  const FutureBuilderExample({super.key});
+class FutureExampleScreen extends StatelessWidget {
+  const FutureExampleScreen({super.key});
 
-  @override
-  State<FutureBuilderExample> createState() => _FutureBuilderExampleState();
-}
-
-class _FutureBuilderExampleState extends State<FutureBuilderExample> {
-  final Future<String> _calculation = Future<String>.delayed(
-    const Duration(seconds: 2),
-    () => 'Data Loaded',
-  );
+  // Simula una operación asincrónica que tarda 2 segundos en completarse.
+  Future<String> _fetchData() async {
+    return await Future.delayed(
+      const Duration(seconds: 2),
+      () => 'Data Loaded', // El resultado de la operación.
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: Theme.of(context).textTheme.displayMedium!,
-      textAlign: TextAlign.center,
-      child: FutureBuilder<String>(
-        future: _calculation, // a previously-obtained Future<String> or null
-        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-          List<Widget> children;
-          if (snapshot.hasData) {
-            children = <Widget>[
-              const Icon(
-                Icons.check_circle_outline,
-                color: Colors.green,
-                size: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Text('Result: ${snapshot.data}'),
-              ),
-            ];
-          } else if (snapshot.hasError) {
-            children = <Widget>[
-              const Icon(
-                Icons.error_outline,
-                color: Colors.red,
-                size: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Text('Error: ${snapshot.error}'),
-              ),
-            ];
-          } else {
-            children = const <Widget>[
-              SizedBox(
-                width: 60,
-                height: 60,
-                child: CircularProgressIndicator(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 16),
-                child: Text('Awaiting result...'),
-              ),
-            ];
-          }
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: children,
-            ),
-          );
-        },
+    // Usa un FutureBuilder para manejar el estado de un Future.
+    return Scaffold(
+      appBar: AppBar(title: const Text('FutureBuilder Example')),
+      body: Center(
+        child: FutureBuilder<String>(
+          future: _fetchData(), // Future que estamos observando.
+          builder: (context, snapshot) {
+            // snapshot contiene el estado actual del Future.
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // Muestra un indicador de carga mientras el Future está pendiente.
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // Muestra un mensaje de error si el Future falla.
+              return const Text('Error loading data');
+            } else if (snapshot.hasData) {
+              // Muestra el resultado si el Future se completa con éxito.
+              return Text(snapshot.data!);
+            } else {
+              // Caso improbable: Future no tiene datos ni error.
+              return const Text('No data available');
+            }
+          },
+        ),
       ),
     );
   }
